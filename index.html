@@ -81,8 +81,9 @@ body::after {
 }
 .nav-item:nth-child(1) .nav-cn { color: #6080C8; }
 .nav-item:nth-child(2) .nav-cn { color: var(--red); }
-.nav-item:nth-child(3) .nav-cn { color: #B8970A; }
-.nav-item:nth-child(4) .nav-cn { color: #4aaa6a; }
+.nav-item:nth-child(3) .nav-cn { color: #4aaa6a; }
+.nav-item:nth-child(4) .nav-cn { color: #B8970A; }
+.nav-item:nth-child(5) .nav-cn { color: #E07820; }
 .nav-jp {
   font-family: 'Noto Serif JP', serif;
   font-size: 10px;
@@ -1823,6 +1824,10 @@ footer {
     <span class="nav-cn">詳</span>
     <span class="nav-jp">詳細</span>
   </a>
+  <button class="nav-item" data-target="sec-kanpa">
+    <span class="nav-cn">援</span>
+    <span class="nav-jp">カンパ</span>
+  </button>
   <button class="nav-item" data-target="sec-artists">
     <span class="nav-cn">演</span>
     <span class="nav-jp">出演者</span>
@@ -1830,10 +1835,6 @@ footer {
   <button class="nav-item" data-target="sec-goods">
     <span class="nav-cn">物</span>
     <span class="nav-jp">グッズ</span>
-  </button>
-  <button class="nav-item" data-target="sec-kanpa">
-    <span class="nav-cn">援</span>
-    <span class="nav-jp">カンパ</span>
   </button>
 </nav>
 <div class="hero">
@@ -2178,6 +2179,112 @@ footer {
     </div>
   </section>
 
+  <!-- SUPPORT / KANPA -->
+  <section class="sec reveal" id="sec-kanpa">
+    <div class="sec-head green">
+      <div class="cn">援</div>
+      <div class="jp">支援・カンパ</div>
+      <div class="en">SUPPORT</div>
+    </div>
+    <div class="support-box">
+      <div class="support-head">
+        <div class="s-title">💚 心來屑ナを応援する</div>
+        <div class="s-sub">SUPPORT COCO SETSUNA</div>
+      </div>
+      <div class="support-body">
+        <p>
+          1口 <strong>¥1,000</strong> からご支援いただけます。<br>
+          口数に応じてリターンをご用意しています。
+        </p>
+        <p>
+          <strong>受付期間</strong>：2026年3月6日 22:00 〜 3月23日 23:59
+        </p>
+
+        <div class="kanpa-list">
+
+          <div class="kanpa-item">
+            <div class="kanpa-head">
+              <div class="kanpa-kuchi"><span class="kuchi-num">1</span><span class="kuchi-label">口</span></div>
+              <div class="kanpa-price">¥1,000</div>
+            </div>
+            <ul class="kanpa-returns">
+              <li>限定ステッカー</li>
+            </ul>
+          </div>
+
+          <div class="kanpa-item">
+            <div class="kanpa-head">
+              <div class="kanpa-kuchi"><span class="kuchi-num">3</span><span class="kuchi-label">口</span></div>
+              <div class="kanpa-price">¥3,000</div>
+            </div>
+            <ul class="kanpa-returns">
+              <li>生誕衣装ブロマイド 2種類</li>
+              <li class="inherited">＋ 1口リターン</li>
+            </ul>
+          </div>
+
+          <div class="kanpa-item">
+            <div class="kanpa-head">
+              <div class="kanpa-kuchi"><span class="kuchi-num">5</span><span class="kuchi-label">口</span></div>
+              <div class="kanpa-price">¥5,000</div>
+            </div>
+            <ul class="kanpa-returns">
+              <li>
+                写真集
+                <span class="kanpa-locked">詳細情報後日解禁 🔒</span>
+              </li>
+              <li>
+                お礼動画（個別）
+              </li>
+              <li class="inherited">＋ 3口以下リターン</li>
+            </ul>
+          </div>
+
+          <div class="kanpa-item kanpa-item-special">
+            <div class="kanpa-head">
+              <div class="kanpa-kuchi"><span class="kuchi-num">10</span><span class="kuchi-label">口</span></div>
+              <div class="kanpa-price">¥10,000</div>
+            </div>
+            <ul class="kanpa-returns">
+              <li>お手紙</li>
+              <li>
+                心來屑ナ pre ピクニックオフ会参加権
+                <span class="kanpa-locked">詳細後日解禁 🔒</span>
+              </li>
+              <li class="inherited">＋ 5口以下リターン</li>
+            </ul>
+          </div>
+
+          <div class="kanpa-item kanpa-item-top">
+            <div class="kanpa-head">
+              <div class="kanpa-kuchi"><span class="kuchi-num">15</span><span class="kuchi-label">口</span></div>
+              <div class="kanpa-price">¥15,000</div>
+            </div>
+            <ul class="kanpa-returns">
+              <li>◆ 心來屑ナ マンツーマン麻雀レッスン</li>
+              <li class="inherited">初心者〜経験者まで2時間みっちり直接指導。牌を囲みながら特別な時間を。</li>
+              <li class="inherited">＋ 10口以下リターン</li>
+            </ul>
+            <div class="kanpa-note">
+              実施時間：2時間 &nbsp;/&nbsp; 参加メンバー：心來屑ナ<br>
+              ルールを知らない方も大歓迎。日時・場所は別途ご連絡。
+            </div>
+          </div>
+
+        </div>
+
+        <div class="support-note">
+          <strong>※</strong> 金額は口数 × ¥1,000 です。
+        </div>
+
+        <a class="kanpa-btn" href="https://paradyonline.base.shop/items/137722365" id="kanpa-url" target="_blank" rel="noopener">
+          💚 カンパ支援はコチラ
+        </a>
+      </div>
+    </div>
+  </section>
+
+
   <!-- ARTIST CARDS -->
   <section class="sec reveal" id="sec-artists">
     <div class="sec-head">
@@ -2306,7 +2413,7 @@ footer {
   </section>
   <section class="sec reveal" id="sec-goods">
     <div class="sec-head">
-      <div class="cn" style="color:#8A6A2A">物</div>
+      <div class="cn" style="color:#E07820">物</div>
       <div class="jp">グッズ</div>
       <div class="en">GOODS</div>
     </div>
@@ -2332,110 +2439,6 @@ footer {
 
   </section>
 
-  <!-- SUPPORT / KANPA -->
-  <section class="sec reveal" id="sec-kanpa">
-    <div class="sec-head green">
-      <div class="cn">援</div>
-      <div class="jp">支援・カンパ</div>
-      <div class="en">SUPPORT</div>
-    </div>
-    <div class="support-box">
-      <div class="support-head">
-        <div class="s-title">💚 心來屑ナを応援する</div>
-        <div class="s-sub">SUPPORT COCO SETSUNA</div>
-      </div>
-      <div class="support-body">
-        <p>
-          1口 <strong>¥1,000</strong> からご支援いただけます。<br>
-          口数に応じてリターンをご用意しています。
-        </p>
-        <p>
-          <strong>受付期間</strong>：2026年3月6日 22:00 〜 3月23日 23:59
-        </p>
-
-        <div class="kanpa-list">
-
-          <div class="kanpa-item">
-            <div class="kanpa-head">
-              <div class="kanpa-kuchi"><span class="kuchi-num">1</span><span class="kuchi-label">口</span></div>
-              <div class="kanpa-price">¥1,000</div>
-            </div>
-            <ul class="kanpa-returns">
-              <li>限定ステッカー</li>
-            </ul>
-          </div>
-
-          <div class="kanpa-item">
-            <div class="kanpa-head">
-              <div class="kanpa-kuchi"><span class="kuchi-num">3</span><span class="kuchi-label">口</span></div>
-              <div class="kanpa-price">¥3,000</div>
-            </div>
-            <ul class="kanpa-returns">
-              <li>生誕衣装ブロマイド 2種類</li>
-              <li class="inherited">＋ 1口リターン</li>
-            </ul>
-          </div>
-
-          <div class="kanpa-item">
-            <div class="kanpa-head">
-              <div class="kanpa-kuchi"><span class="kuchi-num">5</span><span class="kuchi-label">口</span></div>
-              <div class="kanpa-price">¥5,000</div>
-            </div>
-            <ul class="kanpa-returns">
-              <li>
-                写真集
-                <span class="kanpa-locked">詳細情報後日解禁 🔒</span>
-              </li>
-              <li>
-                お礼動画（個別）
-              </li>
-              <li class="inherited">＋ 3口以下リターン</li>
-            </ul>
-          </div>
-
-          <div class="kanpa-item kanpa-item-special">
-            <div class="kanpa-head">
-              <div class="kanpa-kuchi"><span class="kuchi-num">10</span><span class="kuchi-label">口</span></div>
-              <div class="kanpa-price">¥10,000</div>
-            </div>
-            <ul class="kanpa-returns">
-              <li>お手紙</li>
-              <li>
-                心來屑ナ pre ピクニックオフ会参加権
-                <span class="kanpa-locked">詳細後日解禁 🔒</span>
-              </li>
-              <li class="inherited">＋ 5口以下リターン</li>
-            </ul>
-          </div>
-
-          <div class="kanpa-item kanpa-item-top">
-            <div class="kanpa-head">
-              <div class="kanpa-kuchi"><span class="kuchi-num">15</span><span class="kuchi-label">口</span></div>
-              <div class="kanpa-price">¥15,000</div>
-            </div>
-            <ul class="kanpa-returns">
-              <li>◆ 心來屑ナ マンツーマン麻雀レッスン</li>
-              <li class="inherited">初心者〜経験者まで2時間みっちり直接指導。牌を囲みながら特別な時間を。</li>
-              <li class="inherited">＋ 10口以下リターン</li>
-            </ul>
-            <div class="kanpa-note">
-              実施時間：2時間 &nbsp;/&nbsp; 参加メンバー：心來屑ナ<br>
-              ルールを知らない方も大歓迎。日時・場所は別途ご連絡。
-            </div>
-          </div>
-
-        </div>
-
-        <div class="support-note">
-          <strong>※</strong> 金額は口数 × ¥1,000 です。
-        </div>
-
-        <a class="kanpa-btn" href="https://paradyonline.base.shop/items/137722365" id="kanpa-url" target="_blank" rel="noopener">
-          💚 カンパ支援はコチラ
-        </a>
-      </div>
-    </div>
-  </section>
 
 </div><!-- /page -->
 
