@@ -787,6 +787,10 @@ footer {
   background: white;
   overflow: hidden;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px;
 }
 .news-box::before {
   content: '';
@@ -807,10 +811,12 @@ footer {
   text-decoration: none;
   padding: 16px 20px;
   border-left: 3px solid #1E3264;
+  border-bottom: none;
   position: relative;
   z-index: 1;
   transition: background 0.2s;
 }
+.news-row:last-child { border-bottom: none; }
 .news-row:hover { background: #f0f3fa; }
 .news-row-date {
   font-family: 'ZCOOL QingKe HuangYou', serif;
@@ -2020,8 +2026,16 @@ footer {
       <div class="en">NEWS</div>
     </div>
     <div class="news-box">
+      <a class="news-row" href="https://x.com/LOPARA_official/status/2034253491942686908" target="_blank" rel="noopener">
+        <div class="news-row-date">2026.03.18</div>
+        <div class="news-row-body">
+          <div class="news-row-title">10口支援特典 詳細情報解禁⚡️</div>
+          <div class="news-row-link">詳細はコチラをクリック</div>
+        </div>
+        <div class="news-row-arrow">›</div>
+      </a>
       <a class="news-row" href="https://x.com/LOPARA_official/status/2033498516526444682" id="news-url" target="_blank" rel="noopener">
-        <div class="news-row-date">2026.03</div>
+        <div class="news-row-date">2026.03.16</div>
         <div class="news-row-body">
           <div class="news-row-title">15口支援特典 詳細情報解禁⚡️</div>
           <div class="news-row-link">詳細はコチラをクリック</div>
