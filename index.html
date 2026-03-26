@@ -494,7 +494,7 @@ body::after {
 .sec {
   max-width: 760px;
   margin: 0 auto;
-  padding: 72px 24px;
+  padding: 40px 24px;
   position: relative;
   z-index: 1;
 }
@@ -504,12 +504,12 @@ body::after {
   align-items: flex-end;
   gap: 16px;
   border-bottom: 2px solid var(--ink);
-  padding-bottom: 14px;
-  margin-bottom: 36px;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
 }
 .sec-head .cn {
   font-family: 'ZCOOL QingKe HuangYou', serif;
-  font-size: 42px;
+  font-size: 34px;
   color: var(--red);
   line-height: 1;
 }
@@ -816,7 +816,7 @@ footer {
   align-items: center;
   gap: 0;
   text-decoration: none;
-  padding: 16px 20px;
+  padding: 10px 16px;
   border-left: 3px solid #1E3264;
   border-bottom: none;
   position: relative;
@@ -889,7 +889,7 @@ footer {
 
 .icf-header {
   background: var(--ink);
-  padding: 24px 28px;
+  padding: 14px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -919,7 +919,7 @@ footer {
 }
 .icf-title-cn {
   font-family: 'Ma Shan Zheng', serif;
-  font-size: 34px;
+  font-size: 26px;
   color: white;
   line-height: 1;
   text-shadow: 0 0 20px rgba(255,255,255,0.2);
@@ -929,7 +929,7 @@ footer {
 .icf-header-right { text-align: right; }
 .icf-date-big {
   font-family: 'ZCOOL QingKe HuangYou', serif;
-  font-size: 42px;
+  font-size: 32px;
   color: var(--red);
   line-height: 1;
   letter-spacing: -1px;
@@ -953,7 +953,7 @@ footer {
 
 .icf-key {
   background: var(--cream);
-  padding: 20px 14px;
+  padding: 12px 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -979,7 +979,7 @@ footer {
 }
 
 .icf-val {
-  padding: 18px 22px;
+  padding: 12px 16px;
   font-size: 13px;
   line-height: 1.85;
   color: var(--ink-mid);
@@ -2055,6 +2055,15 @@ footer {
       <div class="en">NEWS</div>
     </div>
     <div class="news-box">
+      <!-- 最新3件 -->
+      <a class="news-row" href="#sec-artists" onclick="event.preventDefault();document.getElementById('sec-artists').scrollIntoView({behavior:'smooth'})">
+        <div class="news-row-date">2026.03.26</div>
+        <div class="news-row-body">
+          <div class="news-row-title">cleomery様大好きポイント公開!!</div>
+          <div class="news-row-link">出演者カードをチェック</div>
+        </div>
+        <div class="news-row-arrow">›</div>
+      </a>
       <a class="news-row" href="https://x.com/LOPARA_official/status/2035280263144419714" target="_blank" rel="noopener">
         <div class="news-row-date">2026.03.21</div>
         <div class="news-row-body">
@@ -2071,22 +2080,39 @@ footer {
         </div>
         <div class="news-row-arrow">›</div>
       </a>
-      <a class="news-row" href="https://x.com/LOPARA_official/status/2034253491942686908" target="_blank" rel="noopener">
-        <div class="news-row-date">2026.03.18</div>
-        <div class="news-row-body">
-          <div class="news-row-title">10口支援特典 詳細情報解禁⚡️</div>
-          <div class="news-row-link">詳細はコチラをクリック</div>
-        </div>
-        <div class="news-row-arrow">›</div>
-      </a>
-      <a class="news-row" href="https://x.com/LOPARA_official/status/2033498516526444682" id="news-url" target="_blank" rel="noopener">
-        <div class="news-row-date">2026.03.16</div>
-        <div class="news-row-body">
-          <div class="news-row-title">15口支援特典 詳細情報解禁⚡️</div>
-          <div class="news-row-link">詳細はコチラをクリック</div>
-        </div>
-        <div class="news-row-arrow">›</div>
-      </a>
+
+      <!-- 折りたたみ部分 -->
+      <div id="news-more" style="display:none;">
+        <a class="news-row" href="https://x.com/LOPARA_official/status/2034253491942686908" target="_blank" rel="noopener">
+          <div class="news-row-date">2026.03.18</div>
+          <div class="news-row-body">
+            <div class="news-row-title">10口支援特典 詳細情報解禁⚡️</div>
+            <div class="news-row-link">詳細はコチラをクリック</div>
+          </div>
+          <div class="news-row-arrow">›</div>
+        </a>
+        <a class="news-row" href="https://x.com/LOPARA_official/status/2033498516526444682" target="_blank" rel="noopener">
+          <div class="news-row-date">2026.03.16</div>
+          <div class="news-row-body">
+            <div class="news-row-title">15口支援特典 詳細情報解禁⚡️</div>
+            <div class="news-row-link">詳細はコチラをクリック</div>
+          </div>
+          <div class="news-row-arrow">›</div>
+        </a>
+      </div>
+
+      <!-- すべて見るボタン -->
+      <button id="news-toggle-btn" onclick="
+        var more = document.getElementById('news-more');
+        var btn = document.getElementById('news-toggle-btn');
+        if(more.style.display === 'none'){
+          more.style.display = 'block';
+          btn.textContent = '閉じる ∧';
+        } else {
+          more.style.display = 'none';
+          btn.textContent = 'すべて見る ∨';
+        }
+      " style="width:100%;padding:12px;background:none;border:none;border-top:1px solid var(--border);font-family:'Noto Serif JP',serif;font-size:11px;letter-spacing:3px;color:var(--grey);cursor:pointer;transition:background 0.2s;">すべて見る ∨</button>
     </div>
   </section>
 
@@ -2299,7 +2325,12 @@ footer {
           </div>
         </div>
         <div class="artist-body">
-          <p class="artist-comment">心來屑ナの大好きポイントは近日公開🔒</p>
+          <div class="artist-comment-head">
+            <span class="artist-comment-icon">💬</span>
+            <span class="artist-comment-label">大好きポイント!! by 心來屑ナ</span>
+          </div>
+          <p class="artist-comment">cleomery さん！cleomeryさんは最初見た時から世界観やべぇ……！って思っててなんかこれまた言葉が難しいけど深海にずっといるような感覚もありながら深海から見る光をみてるような曲もあって</p>
+          <button class="artist-read-more" onclick="document.getElementById('cleomery-modal').classList.add('open')">全文を表示 ›</button>
           <a class="artist-x-btn" href="https://x.com/cleomery_info" target="_blank" rel="noopener">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.74l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.912-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
             Xはコチラ!!
@@ -2561,6 +2592,27 @@ footer {
         何度も言うんですけどどの曲も神曲です！！！<br><br>
         みんなと一緒に踊りましょう🎶<br><br>
         ｺｺｾﾂﾅのおすすめ曲は…「BLUE BIRD」🕊️
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- CLEOMERY COMMENT MODAL -->
+<div class="comment-modal-overlay" id="cleomery-modal" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="comment-modal">
+    <div class="comment-modal-header">
+      <div class="comment-modal-title">💬 大好きポイント!! by 心來屑ナ</div>
+      <button class="comment-modal-close" onclick="document.getElementById('cleomery-modal').classList.remove('open')">✕</button>
+    </div>
+    <div class="comment-modal-body">
+      <p class="artist-comment-full">
+        cleomery さん！<br><br>
+        cleomeryさんは最初見た時から世界観やべぇ……！って思っててなんかこれまた言葉が難しいけど深海にずっといるような感覚もありながら深海から見る光をみてるような曲もあって<br><br>
+        ライブは本当に見惚れてしまうが正解だと思う!!いつも僕は口を開けてみています<br><br>
+        惹き込まれるし、ダンスも好きなとこめっちゃ多くて曲もとてもとても大好きです❕<br><br>
+        皆さんそれぞれの世界観キャラがあってとっても素敵屋さんばかり……!!!!<br><br>
+        お友達もいて勝手に対バン被ったら安心感のある大好きなグループさんです🫶🏻<br><br>
+        ｺｺｾﾂﾅのおすすめ曲は……「月華」🥀
       </p>
     </div>
   </div>
