@@ -1569,9 +1569,10 @@ footer {
 }
 .artist-time {
   display: flex;
-  flex-direction: column;
-  gap: 1px;
-  flex: 1;
+  flex-direction: row;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 .artist-time-perf {
   font-size: 10px;
@@ -1587,9 +1588,11 @@ footer {
 }
 .artist-time-row {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   margin-top: 10px;
+  width: 100%;
 }
 
 .artist-comment-head {
