@@ -357,7 +357,56 @@ body::after {
 .hero-pill-venue {
   font-size: 12px;
   color: rgba(255,255,255,0.75);
+}
+.hero-countdown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin: 12px 0 8px;
+}
+.hero-countdown-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: rgba(255,255,255,0.9);
+  text-shadow: 0 1px 6px rgba(0,0,0,0.5);
+}
+.hero-countdown-units {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.hero-countdown-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(0,0,0,0.35);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 6px;
+  padding: 6px 10px 4px;
+  min-width: 48px;
+}
+.hero-countdown-num {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 26px;
+  font-weight: 900;
+  color: white;
+  line-height: 1;
+  letter-spacing: 1px;
+}
+.hero-countdown-label {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 8px;
   letter-spacing: 2px;
+  color: rgba(255,255,255,0.55);
+  margin-top: 3px;
+}
+.hero-countdown-sep {
+  font-size: 22px;
+  font-weight: 900;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 10px;
 }
 
 .hero-ticket-btn {
@@ -875,7 +924,7 @@ footer {
   border-bottom: 1px solid var(--border);
 }
 .icf-row:last-child { border-bottom: none; }
-.icf-row-ticket { align-items: start; }
+.icf-row-ticket { align-items: stretch; }
 
 .icf-key {
   background: var(--cream);
@@ -1006,7 +1055,7 @@ footer {
 }
 
 .icf-ticket-btn-wrap {
-  padding: 20px 24px 4px;
+  padding: 0;
   background: white;
 }
 .icf-ticket-btn {
@@ -1892,6 +1941,19 @@ footer {
         </div>
       </div>
 
+      <div class="hero-countdown" id="hero-countdown">
+        <div class="hero-countdown-title">生誕祭開催まで...</div>
+        <div class="hero-countdown-units">
+          <div class="hero-countdown-unit"><span class="hero-countdown-num" id="cd-days">--</span><span class="hero-countdown-label">DAYS</span></div>
+          <div class="hero-countdown-sep">:</div>
+          <div class="hero-countdown-unit"><span class="hero-countdown-num" id="cd-hours">--</span><span class="hero-countdown-label">HRS</span></div>
+          <div class="hero-countdown-sep">:</div>
+          <div class="hero-countdown-unit"><span class="hero-countdown-num" id="cd-mins">--</span><span class="hero-countdown-label">MIN</span></div>
+          <div class="hero-countdown-sep">:</div>
+          <div class="hero-countdown-unit"><span class="hero-countdown-num" id="cd-secs">--</span><span class="hero-countdown-label">SEC</span></div>
+        </div>
+      </div>
+
         <a class="hero-ticket-btn" href="https://t-dv.com/tenho_biyori" id="hero-ticket-url" target="_blank" rel="noopener" style="display:block;text-align:center;">
           🎟 チケットはコチラ
         </a>
@@ -2277,7 +2339,13 @@ footer {
           </div>
         </div>
         <div class="artist-body">
-          <p class="artist-comment">心來屑ナの大好きポイントは近日公開🔒</p>
+          <div class="artist-comment-head">
+            <span class="artist-comment-icon">💬</span>
+            <span class="artist-comment-label">大好きポイント!! by 心來屑ナ</span>
+          </div>
+          <p class="artist-comment">ELEVYZさん！ELEVYZさんは陰キャでコミュ障な僕にいつも明るく陽気に話しかけてくれてとってもあたたかいグループさん⚡️
+            あー今日上手くいかないな元気ないなって思った時も本当にELEVYZさんのライブ見てたらどうでもいいや！楽しいしか知らない！</p>
+          <button class="artist-read-more" onclick="document.getElementById('elevyz-modal').classList.add('open')">全文を表示 ›</button>
           <div class="artist-time-row"><div class="artist-time"><span class="artist-time-perf">🎤 19:40-20:05</span><span class="artist-time-goods">📸 21:30-22:30</span></div>
           <a class="artist-x-btn" href="https://x.com/ELEVYZ_jp" target="_blank" rel="noopener">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.74l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.912-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
@@ -2507,6 +2575,28 @@ footer {
 #bromide-lightbox.open { display:flex !important; }
 </style>
 
+<!-- ELEVYZ COMMENT MODAL -->
+<div class="comment-modal-overlay" id="elevyz-modal" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="comment-modal">
+    <div class="comment-modal-header">
+      <div class="comment-modal-title">💬 大好きポイント!! by 心來屑ナ</div>
+      <button class="comment-modal-close" onclick="document.getElementById('elevyz-modal').classList.remove('open')">✕</button>
+    </div>
+    <div class="comment-modal-body">
+      <p class="artist-comment-full">
+        ELEVYZさん！<br><br>
+        ELEVYZさんは陰キャでコミュ障な僕にいつも明るく陽気に話しかけてくれてとってもあたたかいグループさん⚡️<br><br>
+        あー今日上手くいかないな元気ないなって思った時も本当にELEVYZさんのライブ見てたらどうでもいいや！楽しいしか知らない！って考えになるしいつみても本当に沢山元気貰えていつの間にか口角上がってます✌🏻<br><br>
+        楽曲もめちゃくちゃ強くて一緒に踊るとことかあるし、MCも超面白くて楽しいです🎶！！<br><br>
+        きっと色んな人が好きになるであろうアイドルさんだよなあ、といつも思ってます！<br><br>
+        ピンチをチャンスに変える天才で愛があるグループさん⚡️<br><br>
+        とにかく元気貰えて本当に大好きですෆ˚*<br><br>
+        ｺｺｾﾂﾅのおすすめ曲は……「ビビビ」⚡️⚡️
+      </p>
+    </div>
+  </div>
+</div>
+
 <!-- USHIMITSU COMMENT MODAL -->
 <div class="comment-modal-overlay" id="ushimitsu-modal" onclick="if(event.target===this)this.classList.remove('open')">
   <div class="comment-modal">
@@ -2576,6 +2666,36 @@ document.querySelectorAll('.nav-item').forEach(btn => {
     window.scrollTo({ top, behavior: 'smooth' });
   });
 });
+
+// Countdown timer
+(function() {
+  const target = new Date('2026-04-06T18:30:00+09:00');
+  const days  = document.getElementById('cd-days');
+  const hours = document.getElementById('cd-hours');
+  const mins  = document.getElementById('cd-mins');
+  const secs  = document.getElementById('cd-secs');
+  const wrap  = document.getElementById('hero-countdown');
+
+  function pad(n) { return String(n).padStart(2, '0'); }
+
+  function tick() {
+    const diff = target - Date.now();
+    if (diff <= 0) {
+      wrap.innerHTML = '<div class="hero-countdown-done">🎉 開演！！</div>';
+      return;
+    }
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    days.textContent  = pad(d);
+    hours.textContent = pad(h);
+    mins.textContent  = pad(m);
+    secs.textContent  = pad(s);
+  }
+  tick();
+  setInterval(tick, 1000);
+})();
 
 </script>
 </body>
